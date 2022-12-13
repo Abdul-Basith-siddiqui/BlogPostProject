@@ -1,4 +1,5 @@
 //jshint esversion:6
+require("dotenv").config();
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 //"mongodb://0.0.0.0:27017/todoListDB"    "mongodb+srv://NovaKing:idontno@cluster0.ae46b4r.mongodb.net/blogList"
 mongoose.connect(
-  "mongodb+srv://NovaKing:keydb@cluster0.ae46b4r.mongodb.net/blogList"
+  `mongodb+srv://NovaKing:${process.env.PASSWORD}@cluster0.ae46b4r.mongodb.net/blogList`
 );
 
 // mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
