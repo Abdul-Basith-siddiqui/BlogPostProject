@@ -99,6 +99,8 @@ app.get("/posts/:postId", function (req, res) {
   // });
 });
 
-app.listen(3000, function () {
+const port = process.env.PORT || 3001;
+
+app.listen(port, function () {
   console.log("Server started on port 3000");
 });
